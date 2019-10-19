@@ -2,17 +2,18 @@ import React from 'react';
 import './styles/_app.scss';
 import PokemonList from "./components/PokemonList"
 import GetDataFromServer from "./services/GetDataFromServer"
-
-console.log(GetDataFromServer())
+import Filter from "./components/Filter"
 
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      pokemons: []
+      pokemons: [],
+      inputValue: ""
     }
-    this.GetPokemonDataFormatted = this.GetPokemonDataFormatted.bind(this)
+
+    this.handleInputValue = this.handleInputValue.bind(this)
   }
 
   componentDidMount() {
@@ -25,18 +26,19 @@ class App extends React.Component {
       });
   }
 
-  GetPokemonDataFormatted() {
-    return (
-      console.log(this.state.pokemons)
-    )
+  handleInputValue(event) {
+    const inputValueEvent = event.target.value;
+    this.setState({
+      inputValue: inputValueEvent
+    })
+    console.log(this.state.pokemons)
   }
-
 
   render() {
     return (
       <div className="pokemon__container" >
-        <PokemonList pokemons={this.state.pokemons} />
-        <button onClick={this.GetPokemonDataFormatted}>Hola marica </button>
+        <Filter handleInputValue={this.handleInputValue} />
+        <PokemonList inputValue={this.state.inputValue} pokemons={this.state.pokemons} />
       </div>
     );
   };

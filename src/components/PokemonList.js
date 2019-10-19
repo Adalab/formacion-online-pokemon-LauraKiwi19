@@ -5,11 +5,12 @@ import PokemonCard from "../components/PokemonCard"
 const PokemonList = (props) => {
     return (
         <ul>
-            {props.pokemons.map(pokemon => {
-                return (
-                    <PokemonCard name={pokemon.name} id={pokemon.id} picture={pokemon.picture} type={pokemon.type} />
-                )
-            })}
+            {props.pokemons.filter(pokemon => pokemon.name.includes(props.inputValue))
+                .map((pokemon, index) => {
+                    return (
+                        <PokemonCard key={index} name={pokemon.name} id={pokemon.id} picture={pokemon.picture} type={pokemon.type} />
+                    )
+                })}
         </ul>
     )
 }
