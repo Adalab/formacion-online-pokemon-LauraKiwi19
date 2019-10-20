@@ -1,7 +1,7 @@
 
 
 const GetDataFromServer = () => {
-    const url = "https://pokeapi.co/api/v2/pokemon/?limit=25"
+    const url = "https://pokeapi.co/api/v2/pokemon/?limit=150"
     return (
         fetch(url)
             .then(response => response.json())
