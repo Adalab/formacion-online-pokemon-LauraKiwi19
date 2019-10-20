@@ -37,6 +37,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="pokemon__container" >
+        <h1 className="pokemon__title">Pokédex</h1>
         <Filter handleInputValue={this.handleInputValue} />
         <PokemonList inputValue={this.state.inputValue} pokemons={this.state.pokemons} />
       </div>

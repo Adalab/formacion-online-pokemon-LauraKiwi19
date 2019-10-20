@@ -1,7 +1,18 @@
-.pokemon__container{
+
+.pokemon{
+&__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0;
-    padding: 0;
-    background-color: yellow;
-    height: 100vh;
-    width: 100vw;
+    padding: 50px;
+    background-image: linear-gradient(to bottom, #ffff63, #f9ee54, #f2dd45, #ebcc36, #e3bb28);
+    min-height: 100vh;
+    height:100%;
+}&__title{
+    letter-spacing: 1.5pt;
+    font-size: 40px;
+    font-family: 'Righteous', cursive;
+    margin-bottom: 50px;
+}
 }

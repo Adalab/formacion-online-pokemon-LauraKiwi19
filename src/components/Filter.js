@@ -1,8 +1,9 @@
 import React from "react";
+import "../styles/_filter.scss"
 
 const Filter = (props) => {
     return (
-        <input onChange={props.handleInputValue} />
+        <input className="pokemon__filter" type="text" placeholder="Search your Pokemon" onChange={props.handleInputValue} />
     )
 }
 
