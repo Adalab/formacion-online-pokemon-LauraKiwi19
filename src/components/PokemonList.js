@@ -7,7 +7,8 @@ const PokemonList = (props) => {
     if (props.inputValue.length > 1) {
         return (
             <ul className="pokemon__list-container">
-                {props.pokemons.filter(pokemon => pokemon.name.includes(props.inputValue))
+                {props.pokemons
+                    .filter(pokemon => pokemon.name.includes(props.inputValue))
                     .map((pokemon, index) => {
                         return (
                             <PokemonCard key={index} name={pokemon.name} id={pokemon.id} picture={pokemon.picture} type={pokemon.type} />
@@ -18,11 +19,13 @@ const PokemonList = (props) => {
     } else {
         return (
             <ul className="pokemon__list-container">
-                {props.pokemons.map((pokemon, index) => {
-                    return (
-                        <PokemonCard key={index} name={pokemon.name} id={pokemon.id} picture={pokemon.picture} type={pokemon.type} />
-                    )
-                })}
+                {props.pokemons
+                    .slice(0, 25)
+                    .map((pokemon, index) => {
+                        return (
+                            <PokemonCard key={index} name={pokemon.name} id={pokemon.id} picture={pokemon.picture} type={pokemon.type} />
+                        )
+                    })}
             </ul>
         )
     }
