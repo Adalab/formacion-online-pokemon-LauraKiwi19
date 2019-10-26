@@ -6,11 +6,11 @@ import PokemonTypes from "./PokemonTypes"
 function EvolutionFrom(evolves_from) {
     if (evolves_from === null) {
         return (
-            <p></p>
+            null
         )
     } else {
         return (
-            <p>Evolves from {evolves_from.name.charAt(0).toUpperCase() + evolves_from.name.slice(1)}</p>
+            <p className="pokemon__evolution">Evolves from: <strong>{evolves_from.name.charAt(0).toUpperCase() + evolves_from.name.slice(1)}</strong> </p>
         )
     }
 };
